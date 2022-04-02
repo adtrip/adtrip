@@ -20,7 +20,7 @@ for sub, marks in (result):
     worksheet.write(row, col, sub)
     worksheet.write(row, col+1, marks)
     row+=1
-
+col=row+1
 worksheet.write(row, 0, 'Total out of 500')
 worksheet.write(row, 1 ,'=sum(B1:B5)')
 worksheet.write(col, 0, 'Averge')
