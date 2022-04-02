@@ -1,0 +1,29 @@
+#we are writing a programe to create a new file and add some data and folumlas in to that file
+
+import xlsxwriter
+#file name is FileName
+#worksheet name is Raw
+workbook= xlsxwriter.Workbook('Result.xlsx')
+worksheet= workbook.add_worksheet('Raw')
+result= (
+            ['Math', 87],
+            ['Hindi', 78],
+            ['English', 88],
+            ['science', 90],
+            ['HIstory', 83]
+            
+)
+row=0
+col=0
+
+for sub, marks in (result):
+    worksheet.write(row, col, sub)
+    worksheet.write(row, col+1, marks)
+    row+=1
+
+worksheet.write(row, 0, 'Total out of 500')
+worksheet.write(row, 1 ,'=sum(B1:B5)')
+worksheet.write(col, 0, 'Averge')
+worksheet.write(col, 1, '=Average(B1:B5)')
+workbook.close()
+
